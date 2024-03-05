@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using VehicleFees.Application.Abstractions.Pricing;
+using VehicleFees.Infrastructure.Pricing;
 
 namespace VehicleFees.Infrastructure.Extensions;
 
@@ -10,6 +12,8 @@ public static class DependencyInjection
     this IServiceCollection services, 
     IConfiguration configuration)
     {
+        services.AddTransient<IFeesRepository, FeesRepository>();
+        services.AddTransient<IFeesService, FeesService>();
         services.AddStackExchangeRedisOutputCache(options =>
         {
             options.Configuration = configuration.GetConnectionString("RedisConn");

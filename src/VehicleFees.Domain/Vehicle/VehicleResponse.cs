@@ -1,11 +1,15 @@
-﻿namespace VehicleFees.Domain.Vehicle;
+﻿using System.Text.Json.Serialization;
 
-public sealed record VehicleResponse(
-    decimal BasePrice,
-    VehicleType VehicleType,
-    decimal BasicFees,
-    decimal SpecialFees,
-    decimal Association,
-    decimal Storage,
-    decimal TotalPrice
-    );
+namespace VehicleFees.Domain.Vehicle;
+
+public sealed class VehicleResponse
+{
+    public decimal BasePrice { get; set; }
+
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public VehicleType VehicleType { get; set; }
+
+    public Fees Fees { get; set; }
+    public decimal TotalPrice { get; set; }
+}
+    
