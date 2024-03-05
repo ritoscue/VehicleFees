@@ -5,5 +5,5 @@ namespace VehicleFees.Application.Abstractions.Pricing;
 
 public interface IFeesRepository
 {
-    public FeesCost GetFeesByVehicleType(VehicleType vehicleType);
+    public Task<FeesCost> GetFeesByVehicleType(VehicleType vehicleType, CancellationToken cancellationToken);
 }

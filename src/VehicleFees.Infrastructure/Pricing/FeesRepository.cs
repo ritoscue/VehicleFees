@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VehicleFees.Application.Abstractions.Pricing;
+﻿using VehicleFees.Application.Abstractions.Pricing;
+using VehicleFees.Domain.Exceptions;
 using VehicleFees.Domain.Fees;
 using VehicleFees.Domain.Vehicle;
 
@@ -16,8 +12,15 @@ public class FeesRepository : IFeesRepository
     {
         _feesList = FeesData.GetDefaultFees();
     }
-    public FeesCost GetFeesByVehicleType(VehicleType vehicleType)
+    public async Task<FeesCost> GetFeesByVehicleType(VehicleType vehicleType, CancellationToken cancellationToken)
     {
-        return _feesList.FirstOrDefault(fee => fee.VehicleType == vehicleType);
+        await Task.Delay(2000);  //Simulate any IO process.
+        
+        var feesCost = _feesList.FirstOrDefault(fee => fee.VehicleType == vehicleType);
+        if (feesCost is null) 
+        {
+            throw new FeeNotFound($"Fees not found for the '{vehicleType}' vehicle type in the FeesRepository repository.");
+        }
+        return feesCost
     }
 }

@@ -14,11 +14,11 @@ public static class DependencyInjection
     {
         services.AddTransient<IFeesRepository, FeesRepository>();
         services.AddTransient<IFeesService, FeesService>();
-        services.AddStackExchangeRedisOutputCache(options =>
-        {
-            options.Configuration = configuration.GetConnectionString("RedisConn");
-            options.InstanceName = "VehicleFee";
-        });
+        //services.AddStackExchangeRedisOutputCache(options =>
+        //{
+        //    options.Configuration = configuration.GetConnectionString("RedisConn");
+        //    options.InstanceName = "VehicleFee";
+        //});
         services.AddOutputCache(options =>
         {
             options.AddBasePolicy(policy => policy

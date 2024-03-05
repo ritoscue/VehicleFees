@@ -7,16 +7,15 @@ namespace VehicleFees.Infrastructure.Pricing;
 public class FeesService (IFeesRepository feesRepository) : IFeesService
 {
     private readonly IFeesRepository _feesRepository = feesRepository;
-    public Task<VehicleResponse> CalculateTotalPrice(VehicleInformation vehicleInformation, CancellationToken cancellationToken)
+    public async Task<VehicleResponse> CalculateTotalPrice(VehicleInformation vehicleInformation, CancellationToken cancellationToken)
     {
-        var fees = _feesRepository.GetFeesByVehicleType(vehicleInformation.VehicleType);
+        var feesCost = await _feesRepository.GetFeesByVehicleType(vehicleInformation.VehicleType, cancellationToken);
 
-        var basicFee = CalculateBasicFee(vehicleInformation.BasePrice, fees);
-        var specialFee = CalculateSpecialFee(vehicleInformation.BasePrice, fees);
-        var associationFee = CalculatedAssociatedFee(vehicleInformation.BasePrice, fees.AssociatedFee);
-        var storageFee = fees.StorageFee;
+        var basicFee = CalculateBasicFee(vehicleInformation.BasePrice, feesCost);
+        var specialFee = CalculateSpecialFee(vehicleInformation.BasePrice, feesCost);
+        var associationFee = CalculatedAssociatedFee(vehicleInformation.BasePrice, feesCost.AssociatedFee);
+        var storageFee = feesCost.StorageFee;
         var totalPrice = vehicleInformation.BasePrice + basicFee + specialFee + associationFee + storageFee;
-
 
         var vehicleResponse = new VehicleResponse
         {
@@ -31,7 +30,8 @@ public class FeesService (IFeesRepository feesRepository) : IFeesService
             },
             TotalPrice = totalPrice
         };
-        return Task.FromResult(vehicleResponse);
+        
+        return vehicleResponse;
     }
 
     public decimal CalculateBasicFee(decimal basePrice, FeesCost fee)
