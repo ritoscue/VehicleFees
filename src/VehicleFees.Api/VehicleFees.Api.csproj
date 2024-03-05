@@ -21,4 +21,8 @@
     <ProjectReference Include="..\VehicleFees.Infrastructure\VehicleFees.Infrastructure.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="VehicleFees.Api.FunctionalTests" />
+	</ItemGroup>
+
 </Project>
