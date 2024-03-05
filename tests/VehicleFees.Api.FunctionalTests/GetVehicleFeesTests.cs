@@ -5,11 +5,15 @@ using VehicleFees.Domain.Vehicle;
 
 namespace VehicleFees.Api.FunctionalTests;
 
-public class GetVehicleFees
+public class GetVehicleFeesTests
 {
     [Theory]
     [InlineData(398.00, VehicleType.Common, 39.80, 7.96, 5, 100, 550.76)]
+    [InlineData(501.00, VehicleType.Common, 50.00, 10.02, 10, 100, 671.02)]
+    [InlineData(57.00, VehicleType.Common, 10.00, 1.14, 5, 100, 173.14)]
     [InlineData(1800.00, VehicleType.Luxury, 180.00, 72.00, 15, 100, 2167.00)]
+    [InlineData(1100.00, VehicleType.Common, 50.00, 22.00, 15, 100, 1287.00)]
+    [InlineData(1000000.00, VehicleType.Luxury, 200.00, 40000.00, 20, 100, 1040320.00)]
     public async Task Get_ShouldReturnFees_WhenSendCorrectParameters(
         decimal basePrice, 
         VehicleType vehicleType, 
