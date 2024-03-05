@@ -7,15 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9928FC9E-20E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8FC285B8-953B-48FB-86EC-0CDB071ABB25}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFees.Domain", "VehicleFees.Domain\VehicleFees.Domain.csproj", "{305A31B5-41BF-4B93-B214-7F6261DC256F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFees.Domain", "src\VehicleFees.Domain\VehicleFees.Domain.csproj", "{305A31B5-41BF-4B93-B214-7F6261DC256F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleFees.Application", "VehicleFees.Application\VehicleFees.Application.csproj", "{B870C713-9452-437B-9901-B3433D5241D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFees.Application", "src\VehicleFees.Application\VehicleFees.Application.csproj", "{B870C713-9452-437B-9901-B3433D5241D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleFees.Infrastructure", "VehicleFees.Infrastructure\VehicleFees.Infrastructure.csproj", "{0462CC28-595E-4454-ACB9-D8AAD1AA46CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFees.Infrastructure", "src\VehicleFees.Infrastructure\VehicleFees.Infrastructure.csproj", "{0462CC28-595E-4454-ACB9-D8AAD1AA46CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleFees.Presentation", "VehicleFees.Presentation\VehicleFees.Presentation.csproj", "{3F0286D4-4770-4B84-AFAC-D9A00D6FE516}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFees.Api", "src\VehicleFees.Api\VehicleFees.Api.csproj", "{3F0286D4-4770-4B84-AFAC-D9A00D6FE516}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleFees.Tests", "VehicleFees.Tests\VehicleFees.Tests.csproj", "{C7395D15-B5BD-4DF9-9EAA-8C1BD68FF2EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VehicleFees.Tests", "tests\VehicleFees.Tests\VehicleFees.Tests.csproj", "{C7395D15-B5BD-4DF9-9EAA-8C1BD68FF2EE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BBE61321-7AB8-4684-AE72-9FEC70745D3B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{C7395D15-B5BD-4DF9-9EAA-8C1BD68FF2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7395D15-B5BD-4DF9-9EAA-8C1BD68FF2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7395D15-B5BD-4DF9-9EAA-8C1BD68FF2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE61321-7AB8-4684-AE72-9FEC70745D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE61321-7AB8-4684-AE72-9FEC70745D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE61321-7AB8-4684-AE72-9FEC70745D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE61321-7AB8-4684-AE72-9FEC70745D3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

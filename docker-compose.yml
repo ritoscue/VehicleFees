@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  vehiclefees.api:
+    image: ${DOCKER_REGISTRY-}vehiclefeesapi
+    build:
+      context: .
+      dockerfile: src/VehicleFees.Api/Dockerfile
+  fees-redis:
+    image: redis:latest
+    container_name: fees.Redis
+    restart: always
+    ports:
+      - '6379:6379'

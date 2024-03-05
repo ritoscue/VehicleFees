@@ -1,6 +1,0 @@
-@VehicleFees.Presentation_HostAddress = http://localhost:5268
-
-GET {{VehicleFees.Presentation_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
