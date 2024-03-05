@@ -21,6 +21,6 @@ public class FeesRepository : IFeesRepository
         {
             throw new FeeNotFound($"Fees not found for the '{vehicleType}' vehicle type in the FeesRepository repository.");
         }
-        return feesCost
+        return feesCost;
     }
 }
