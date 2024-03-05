@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using VehicleFees.Application.Abstractions.Pricing;
-using VehicleFees.Infrastructure.Pricing;
+using VehicleFees.Application.Abstractions.Fees;
+using VehicleFees.Infrastructure.FeesCalculation;
 
 namespace VehicleFees.Infrastructure.Extensions;
 

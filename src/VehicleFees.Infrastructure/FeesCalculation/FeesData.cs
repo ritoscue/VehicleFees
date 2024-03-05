@@ -1,7 +1,7 @@
 ﻿using VehicleFees.Domain.Fees;
 using VehicleFees.Domain.Vehicle;
 
-namespace VehicleFees.Infrastructure.Pricing;
+namespace VehicleFees.Infrastructure.FeesCalculation;
 
 internal class FeesData
 {

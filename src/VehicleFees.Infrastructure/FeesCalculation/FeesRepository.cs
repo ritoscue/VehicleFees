@@ -1,9 +1,9 @@
-﻿using VehicleFees.Application.Abstractions.Pricing;
+﻿using VehicleFees.Application.Abstractions.Fees;
 using VehicleFees.Domain.Exceptions;
 using VehicleFees.Domain.Fees;
 using VehicleFees.Domain.Vehicle;
 
-namespace VehicleFees.Infrastructure.Pricing;
+namespace VehicleFees.Infrastructure.FeesCalculation;
 
 public class FeesRepository : IFeesRepository
 {

@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using VehicleFees.Application.Abstractions.Pricing;
+using VehicleFees.Application.Abstractions.Fees;
 using VehicleFees.Application.Extensions;
 using VehicleFees.Domain.Exceptions;
 using VehicleFees.Domain.Vehicle;

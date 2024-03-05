@@ -1,6 +1,6 @@
 ﻿using VehicleFees.Domain.Vehicle;
 
-namespace VehicleFees.Application.Abstractions.Pricing;
+namespace VehicleFees.Application.Abstractions.Fees;
 
 public interface IFeesService
 {
