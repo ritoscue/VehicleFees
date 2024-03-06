@@ -13,7 +13,7 @@ namespace VehicleFees.Api.Controllers
 
         [HttpGet]
         [OutputCache]
-        public async Task<IActionResult> GetBasePriceByValueAndType(decimal? basePrice, string? type, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetTotalPriceByBaseAndType(decimal? basePrice, string? type, CancellationToken cancellationToken)
         {
             var query = new GetTotalPriceVehicleQuery(basePrice, type);
             var response = await _sender.Send(query, cancellationToken);
