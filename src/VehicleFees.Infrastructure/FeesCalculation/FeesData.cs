@@ -5,7 +5,7 @@ namespace VehicleFees.Infrastructure.FeesCalculation;
 
 internal class FeesData
 {
-    public static List<FeesCost> FeeCostData =
+    public static List<FeesCost> FeeCostData { get;} =
     [
         new FeesCost
         {

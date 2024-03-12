@@ -3,8 +3,8 @@
 public class TotalPriceResult
 {
     
-    public Dictionary<string, List<string>>? _validationErrors;
-    public VehicleResponse? _response;
+    private Dictionary<string, List<string>>? _validationErrors;
+    private VehicleResponse? _response;
     public bool IsSuccess { get; }
 
     public TotalPriceResult()
@@ -22,4 +22,18 @@ public class TotalPriceResult
         _response = response;
         IsSuccess = true;
     }
+
+    public VehicleResponse GetResult()
+    {
+        if (IsSuccess)
+            return _response;
+        else
+            throw new InvalidOperationException("No result available because the operation was not successful.");
+    }
+
+    public List<string> GetAllErrors()
+    {
+        return _validationErrors?.SelectMany(pair => pair.Value).ToList() ?? new List<string>();
+    }
 }
+
